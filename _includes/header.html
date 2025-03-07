@@ -1,50 +1,64 @@
-<header class="relative mb-14 py-10 w-full">
-    <!-- Title (common to all screen sizes) -->
-    {%- if page.layout == 'home' -%}
-    <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left">
-      {{- site.title -}}
-    </h1>
-    {%- else -%}
-    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left"
-       href="{{ '/' | relative_url }}">
-      <span class="bg-clip-text text-transparent bg-gradient-to-r
-                   from-rose-400 to-purple-800
-                   dark:from-pink-300 dark:to-violet-300">
+<header class="mb-14 py-10 w-full">
+    <!-- DESKTOP LAYOUT (md+) -->
+    <div class="hidden md:flex flex-row place-content-between items-center w-full">
+      {%- if page.layout == 'home' -%}
+      <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white">
         {{- site.title -}}
-      </span>
-    </a>
-    {%- endif -%}
-  
-    <!-- Desktop byline & logo (only on md+ screens) -->
-    <div class="hidden md:flex items-end mt-4">
-      <span class="flex items-end">
-        <span class="mr-1">by</span>
+      </h1>
+      {%- else -%}
+      <a class="inline-block text-5xl md:text-6xl font-sans font-black"
+         href="{{ '/' | relative_url }}">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r
+                     from-rose-400 to-purple-800
+                     dark:from-pink-300 dark:to-violet-300">
+          {{- site.title -}}
+        </span>
+      </a>
+      {%- endif -%}
+      <span class="relative flex items-end">
+        <span class="mr-1">by</span>&nbsp;
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
                      dark:from-pink-300 dark:to-violet-300
                      font-bold whitespace-nowrap">
           Eve Death
-        </span>
+        </span>&nbsp;
+        <img class="mx-2 inline h-28 w-28"
+             src="{{ site.author.logo }}"
+             alt="{{ site.author.name }}">
       </span>
-      <img class="ml-2 h-auto max-w-[140px]"
-           src="{{ site.author.logo }}"
-           alt="{{ site.author.name }}">
     </div>
   
-    <!-- Mobile byline & logo (absolutely positioned) -->
-    <div class="md:hidden absolute left-0 right-0 top-[4rem]
-             flex items-end justify-between">
-      <span class="flex items-end">
-        <span class="mr-1">by</span>
+    <!-- MOBILE LAYOUT (<md) -->
+    <div class="md:hidden relative w-full">
+      {%- if page.layout == 'home' -%}
+      <h1 class="font-sans font-black text-5xl dark:text-white text-left">
+        {{- site.title -}}
+      </h1>
+      {%- else -%}
+      <a class="inline-block text-5xl font-sans font-black text-left"
+         href="{{ '/' | relative_url }}">
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
-                     dark:from-pink-300 dark:to-violet-300
-                     font-bold whitespace-nowrap">
-          Eve Death
+                     dark:from-pink-300 dark:to-violet-300">
+          {{- site.title -}}
         </span>
-      </span>
-      <img class="h-auto max-w-[100px]"
-           src="{{ site.author.logo }}"
-           alt="{{ site.author.name }}">
+      </a>
+      {%- endif -%}
+      <!-- Absolutely positioned byline/logo for mobile -->
+      <div class="absolute left-0 right-0 top-[4rem] flex items-end justify-between">
+        <span class="flex items-end">
+          <span class="mr-1">by</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r
+                       from-rose-400 to-purple-800
+                       dark:from-pink-300 dark:to-violet-300
+                       font-bold whitespace-nowrap">
+            Eve Death
+          </span>
+        </span>
+        <img class="h-auto max-w-[100px]"
+             src="{{ site.author.logo }}"
+             alt="{{ site.author.name }}">
+      </div>
     </div>
   </header>
