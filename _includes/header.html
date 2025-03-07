@@ -1,17 +1,22 @@
-<header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 py-10 w-full">
+<header class="relative flex flex-col md:flex-row justify-between items-start md:items-end mb-14 py-10 w-full">
     {%- if page.layout == 'home' -%}
-    <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left">
+    <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left relative">
         {{- site.title -}}
+        <img class="absolute right-0 top-[calc(1em+4px)] h-auto max-w-[60px] md:relative md:max-w-[140px] md:ml-2" 
+            src="{{ site.author.logo }}" 
+            alt="{{ site.author.name }}">
     </h1>
     {%- else -%}
-    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left" href="{{ '/' | relative_url }}">
+    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left relative" href="{{ '/' | relative_url }}">
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300">
             {{- site.title -}}
+            <img class="absolute right-0 top-[calc(1em+4px)] h-auto max-w-[60px] md:relative md:max-w-[140px] md:ml-2" 
+                src="{{ site.author.logo }}" 
+                alt="{{ site.author.name }}">
         </span>
     </a>
     {%- endif -%}
-    <span class="flex flex-col-reverse md:flex-row items-start md:items-end self-start md:self-auto mt-4 md:mt-0 gap-1 md:gap-2">
-        <img class="ml-2 inline h-auto max-w-[112px] md:max-w-[140px]" src="{{ site.author.logo }}" alt="{{ site.author.name }}">
+    <span class="flex flex-col items-start md:items-end self-start md:self-auto mt-4 md:mt-0">
         <span class="flex items-start md:items-end">
             <span class="mr-1">by</span>&nbsp;
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
