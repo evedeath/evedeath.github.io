@@ -14,14 +14,8 @@
     </a>
     {%- endif -%}
   
-    <!-- 
-      Mobile byline & logo (shown only on small screens).
-      Overlaps the title slightly (mt-[-2rem]), 
-      placing byline below the title but shifting both 
-      text & logo down together. 
-    -->
-    <div class="md:hidden relative w-full mt-[-2rem] z-10 
-                flex items-end justify-between pb-8">
+    <!-- Mobile byline & logo (only on small screens) -->
+    <div class="md:hidden relative w-full mt-[-1rem] z-10 flex items-end justify-between pb-2">
       <span class="flex items-end">
         <span class="mr-1">by</span>
         <span class="bg-clip-text text-transparent bg-gradient-to-r
@@ -36,7 +30,7 @@
            alt="{{ site.author.name }}">
     </div>
   
-    <!-- Desktop byline & logo (shown only on md+ screens) -->
+    <!-- Desktop byline & logo (only on md+ screens) -->
     <div class="hidden md:flex items-end mt-4 md:mt-0">
       <span class="flex items-end">
         <span class="mr-1">by</span>
