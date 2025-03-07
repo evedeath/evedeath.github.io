@@ -14,10 +14,15 @@
     </a>
     {%- endif -%}
   
-    <!-- Mobile byline and overlapping logo (visible only on small screens) -->
-    <div class="relative md:hidden w-full mt-[-2rem] z-10">
-      <!-- Byline text -->
-      <span class="inline-flex items-end">
+    <!-- 
+      Mobile byline & logo (shown only on small screens).
+      Overlaps the title slightly (mt-[-2rem]), 
+      placing byline below the title but shifting both 
+      text & logo down together. 
+    -->
+    <div class="md:hidden relative w-full mt-[-2rem] z-10 
+                flex items-end justify-between pb-8">
+      <span class="flex items-end">
         <span class="mr-1">by</span>
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
@@ -26,13 +31,12 @@
           Eve Death
         </span>
       </span>
-      <!-- Absolutely-positioned logo at bottom-right of this container -->
-      <img class="absolute bottom-0 right-0 h-auto max-w-[140px]"
+      <img class="h-auto max-w-[140px]"
            src="{{ site.author.logo }}"
            alt="{{ site.author.name }}">
     </div>
   
-    <!-- Desktop byline and logo (visible only on md+ screens) -->
+    <!-- Desktop byline & logo (shown only on md+ screens) -->
     <div class="hidden md:flex items-end mt-4 md:mt-0">
       <span class="flex items-end">
         <span class="mr-1">by</span>
