@@ -1,21 +1,54 @@
 <header class="mb-14 py-10 w-full mt-10">
-    <!-- DESKTOP LAYOUT (md+) -->
-    <div class="hidden md:flex flex-row place-content-between items-center w-full">
-      {%- if page.layout == 'home' -%}
-      <h1 class="freehand-regular text-6xl md:text-7xl dark:text-white">
+  <!-- DESKTOP LAYOUT (md+) -->
+  <div class="hidden md:flex flex-row place-content-between items-center w-full">
+    {%- if page.layout == 'home' -%}
+    <h1 class="freehand-regular text-6xl md:text-7xl dark:text-white">
+      {{- site.title -}}
+    </h1>
+    {%- else -%}
+    <a class="inline-block text-6xl md:text-7xl freehand-regular"
+       href="{{ '/' | relative_url }}">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r
+                   from-rose-400 to-purple-800
+                   dark:from-slate-300 dark:to-violet-300">
         {{- site.title -}}
-      </h1>
-      {%- else -%}
-      <a class="inline-block text-6xl md:text-7xl freehand-regular"
-         href="{{ '/' | relative_url }}">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r
-                     from-rose-400 to-purple-800
-                     dark:from-slate-300 dark:to-violet-300">
-          {{- site.title -}}
-        </span>
-      </a>
-      {%- endif -%}
-      <span class="relative flex items-end">
+      </span>
+    </a>
+    {%- endif -%}
+    <span class="relative flex items-end">
+      <span class="mr-1">is</span>
+      <span class="bg-clip-text text-transparent bg-gradient-to-r
+                   from-rose-400 to-purple-800
+                   dark:from-slate-300 dark:to-violet-300
+                   font-bold whitespace-nowrap">
+        eve death
+      </span>
+      <img class="mx-2 inline h-auto max-w-[160px]"
+           src="{{ site.author.logo }}"
+           alt="{{ site.author.name }}">
+    </span>
+  </div>
+
+  <!-- MOBILE LAYOUT (<md) -->
+  <!-- The parent is relative, so child can be absolute without overflowing -->
+  <div class="md:hidden relative w-full">
+    {%- if page.layout == 'home' -%}
+    <h1 class="freehand-regular text-6xl dark:text-white text-left">
+      {{- site.title -}}
+    </h1>
+    {%- else -%}
+    <a class="inline-block text-6xl freehand-regular text-left"
+       href="{{ '/' | relative_url }}">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r
+                   from-rose-400 to-purple-800
+                   dark:from-slate-300 dark:to-violet-300">
+        {{- site.title -}}
+      </span>
+    </a>
+    {%- endif -%}
+    <!-- Absolutely positioned, but uses w-full to prevent overflow -->
+    <div class="absolute top-[2rem] w-full flex items-end justify-between px-4">
+      <span class="flex items-end">
         <span class="mr-1">is</span>
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
@@ -23,42 +56,10 @@
                      font-bold whitespace-nowrap">
           eve death
         </span>
-        <img class="mx-2 inline h-auto max-w-[160px]"
-             src="{{ site.author.logo }}"
-             alt="{{ site.author.name }}">
       </span>
+      <img class="h-auto max-w-[100px]"
+           src="{{ site.author.logo }}"
+           alt="{{ site.author.name }}">
     </div>
-  
-    <!-- MOBILE LAYOUT (<md) -->
-    <div class="md:hidden relative w-full">
-      {%- if page.layout == 'home' -%}
-      <h1 class="freehand-regular text-6xl dark:text-white text-left">
-        {{- site.title -}}
-      </h1>
-      {%- else -%}
-      <a class="inline-block text-6xl freehand-regular text-left"
-         href="{{ '/' | relative_url }}">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r
-                     from-rose-400 to-purple-800
-                     dark:from-slate-300 dark:to-violet-300">
-          {{- site.title -}}
-        </span>
-      </a>
-      {%- endif -%}
-      <div class="absolute left-0 right-0 top-[2rem]
-                  flex items-end justify-between">
-        <span class="flex items-end">
-          <span class="mr-1">is</span>
-          <span class="bg-clip-text text-transparent bg-gradient-to-r
-                       from-rose-400 to-purple-800
-                       dark:from-slate-300 dark:to-violet-300
-                       font-bold whitespace-nowrap">
-            eve death
-          </span>
-        </span>
-        <img class="h-auto max-w-[100px]"
-             src="{{ site.author.logo }}"
-             alt="{{ site.author.name }}">
-      </div>
-    </div>
-  </header>
+  </div>
+</header>
