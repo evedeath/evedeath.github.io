@@ -1,34 +1,37 @@
 <header class="relative flex flex-col md:flex-row justify-between items-start md:items-end mb-14 py-10 w-full">
     {%- if page.layout == 'home' -%}
-    <div class="relative w-full">
-        <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left relative">
-            {{- site.title -}}
-        </h1>
-        <img class="absolute right-0 bottom-[calc(-0.5em)] h-auto max-w-[140px] md:relative md:bottom-auto md:right-auto md:max-w-[140px]" 
-            src="{{ site.author.logo }}" 
-            alt="{{ site.author.name }}">
-    </div>
+    <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left">
+      {{- site.title -}}
+    </h1>
     {%- else -%}
-    <div class="relative w-full">
-        <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left relative" href="{{ '/' | relative_url }}">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300">
-                {{- site.title -}}
-            </span>
-        </a>
-        <img class="absolute right-0 bottom-[calc(-0.5em)] h-auto max-w-[140px] md:relative md:bottom-auto md:right-auto md:max-w-[140px]" 
-            src="{{ site.author.logo }}" 
-            alt="{{ site.author.name }}">
-    </div>
+    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left" 
+       href="{{ '/' | relative_url }}">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 
+                   dark:from-pink-300 dark:to-violet-300">
+        {{- site.title -}}
+      </span>
+    </a>
     {%- endif -%}
-    <span class="flex flex-col items-start md:flex-row md:items-end self-start md:self-auto mt-4 md:mt-0 relative">
-        <span class="flex items-start md:items-end">
-            <span class="mr-1">by</span>&nbsp;
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
-                Eve Death
-            </span>
+  
+    <!-- Byline container (relative) so the mobile logo can be absolutely positioned -->
+    <span class="relative flex flex-col md:flex-row md:items-end self-start md:self-auto mt-4 md:mt-0">
+      <span class="flex items-end">
+        <span class="mr-1">by</span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800
+                     dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
+          Eve Death
         </span>
-        <img class="ml-2 inline h-auto max-w-[140px] hidden md:inline" 
-            src="{{ site.author.logo }}" 
-            alt="{{ site.author.name }}">
+      </span>
+      
+      <!-- Desktop logo: shown on md+ screens, inline next to text -->
+      <img class="ml-2 h-auto max-w-[140px] hidden md:inline" 
+           src="{{ site.author.logo }}" 
+           alt="{{ site.author.name }}">
+  
+      <!-- Mobile logo: absolutely positioned so its bottom aligns 
+           with the bottom of the "by Eve Death" container -->
+      <img class="absolute bottom-0 right-0 h-auto max-w-[120px] md:hidden"
+           src="{{ site.author.logo }}" 
+           alt="{{ site.author.name }}">
     </span>
-</header>
+  </header>
