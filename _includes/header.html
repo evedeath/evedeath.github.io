@@ -1,0 +1,20 @@
+<header class="flex flex-row place-content-between items-center mb-14 py-10">
+    {%- if page.layout == 'home' -%}
+    <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white">
+        {{- site.title -}}
+    </h1>
+    {%- else -%}
+    <a class="inline-block text-5xl md:text-6xl font-sans font-black" href="{{ '/' | relative_url }}">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300">
+            {{- site.title -}}
+        </span>
+    </a>
+    {%- endif -%}
+    <span class="relative top-[4px] italic flex items-center">
+        <span class="mr-1">by</span>&nbsp;
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
+            Eve Death
+        </span>&nbsp;
+        <img class="relative -top-1 mx-2 inline h-28 w-28" src="{{ site.author.logo }}" alt="{{ site.author.name }}">
+    </span>
+</header>

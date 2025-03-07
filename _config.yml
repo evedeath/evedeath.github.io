@@ -1,0 +1,24 @@
+title: "The Belletrist"
+
+remote_theme: foodgy/jekyll-overreacted
+
+author:
+  name: Eve Death
+  logo: "/img/logo.png"
+
+description: >
+  head empty, page full
+
+paginate: 10
+paginate_path: /page-:num/
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+head_code: |
+  <link rel="icon" type="image/png" href="/img/icon.png">
