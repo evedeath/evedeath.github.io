@@ -31,8 +31,10 @@
            alt="{{ site.author.name }}">
     </div>
   
-    <!-- Mobile byline & logo (only on small screens), absolutely positioned -->
-    <div class="md:hidden absolute left-0 right-0 top-[3.5rem] flex items-end justify-between px-4">
+    <!-- Mobile byline & logo (absolutely positioned) -->
+    <div 
+      class="md:hidden absolute left-0 right-0 top-[3.5rem]
+             flex items-end justify-between">
       <span class="flex items-end">
         <span class="mr-1">by</span>
         <span class="bg-clip-text text-transparent bg-gradient-to-r
@@ -42,7 +44,7 @@
           Eve Death
         </span>
       </span>
-      <img class="h-auto max-w-[140px]"
+      <img class="h-auto max-w-[100px]"
            src="{{ site.author.logo }}"
            alt="{{ site.author.name }}">
     </div>
