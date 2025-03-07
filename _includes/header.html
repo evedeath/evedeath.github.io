@@ -1,4 +1,4 @@
-<header class="flex flex-row place-content-between items-center mb-14 py-10">
+<header class="flex flex-row justify-between items-end mb-14 py-10 w-full">
     {%- if page.layout == 'home' -%}
     <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white">
         {{- site.title -}}
@@ -10,11 +10,11 @@
         </span>
     </a>
     {%- endif -%}
-    <span class="relative flex items-end">
+    <span class="flex items-end flex-wrap gap-x-2 md:gap-x-4 w-auto">
         <span class="mr-1">by</span>&nbsp;
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
             Eve Death
         </span>&nbsp;
-        <img class="mx-2 inline h-28 w-28" src="{{ site.author.logo }}" alt="{{ site.author.name }}">
+        <img class="inline-block h-24 w-24 md:h-28 md:w-28 max-w-full" src="{{ site.author.logo }}" alt="{{ site.author.name }}">
     </span>
 </header>
