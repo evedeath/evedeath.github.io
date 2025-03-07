@@ -23,7 +23,6 @@
                      font-bold whitespace-nowrap">
           Eve Death
         </span>
-        <!-- Bigger on desktop, preserving original aspect ratio -->
         <img class="mx-2 inline h-auto max-w-[160px]"
              src="{{ site.author.logo }}"
              alt="{{ site.author.name }}">
@@ -46,8 +45,7 @@
         </span>
       </a>
       {%- endif -%}
-      <!-- Absolutely positioned byline/logo for mobile -->
-      <div class="absolute left-0 right-0 top-[3.5rem]
+      <div class="absolute left-0 right-0 top-[3rem]
                   flex items-end justify-between">
         <span class="flex items-end">
           <span class="mr-1">by</span>
@@ -58,7 +56,6 @@
             Eve Death
           </span>
         </span>
-        <!-- Smaller on mobile, preserving original aspect ratio -->
         <img class="h-auto max-w-[100px]"
              src="{{ site.author.logo }}"
              alt="{{ site.author.name }}">
