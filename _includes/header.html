@@ -2,11 +2,11 @@
     <!-- DESKTOP LAYOUT (md+) -->
     <div class="hidden md:flex flex-row place-content-between items-center w-full">
       {%- if page.layout == 'home' -%}
-      <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white">
+      <h1 class="freehand-regular text-5xl md:text-6xl dark:text-white">
         {{- site.title -}}
       </h1>
       {%- else -%}
-      <a class="inline-block text-5xl md:text-6xl font-sans font-black"
+      <a class="inline-block text-5xl md:text-6xl freehand-regular"
          href="{{ '/' | relative_url }}">
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
@@ -21,7 +21,7 @@
                      from-rose-400 to-purple-800
                      dark:from-slate-300 dark:to-violet-300
                      font-bold whitespace-nowrap">
-          Eve Death
+          eve death
         </span>
         <img class="mx-2 inline h-auto max-w-[160px]"
              src="{{ site.author.logo }}"
@@ -32,11 +32,11 @@
     <!-- MOBILE LAYOUT (<md) -->
     <div class="md:hidden relative w-full">
       {%- if page.layout == 'home' -%}
-      <h1 class="font-sans font-black text-5xl dark:text-white text-left">
+      <h1 class="freehand-regular text-5xl dark:text-white text-left">
         {{- site.title -}}
       </h1>
       {%- else -%}
-      <a class="inline-block text-5xl font-sans font-black text-left"
+      <a class="inline-block text-5xl freehand-regular text-left"
          href="{{ '/' | relative_url }}">
         <span class="bg-clip-text text-transparent bg-gradient-to-r
                      from-rose-400 to-purple-800
