@@ -1,37 +1,49 @@
 <header class="relative flex flex-col md:flex-row justify-between items-start md:items-end mb-14 py-10 w-full">
+    <!-- Title (same for mobile and desktop) -->
     {%- if page.layout == 'home' -%}
     <h1 class="font-sans font-black text-5xl md:text-6xl dark:text-white text-left">
       {{- site.title -}}
     </h1>
     {%- else -%}
-    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left" 
+    <a class="inline-block text-5xl md:text-6xl font-sans font-black text-left"
        href="{{ '/' | relative_url }}">
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 
+      <span class="bg-clip-text text-transparent bg-gradient-to-r
+                   from-rose-400 to-purple-800
                    dark:from-pink-300 dark:to-violet-300">
         {{- site.title -}}
       </span>
     </a>
     {%- endif -%}
   
-    <!-- Byline container (relative) so the mobile logo can be absolutely positioned -->
-    <span class="relative flex flex-col md:flex-row md:items-end self-start md:self-auto mt-4 md:mt-0">
+    <!-- Mobile byline and bigger logo (visible only on small screens) -->
+    <div class="md:hidden flex items-end justify-between w-full mt-4">
       <span class="flex items-end">
         <span class="mr-1">by</span>
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800
-                     dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r
+                     from-rose-400 to-purple-800
+                     dark:from-pink-300 dark:to-violet-300
+                     font-bold whitespace-nowrap">
           Eve Death
         </span>
       </span>
-      
-      <!-- Desktop logo: shown on md+ screens, inline next to text -->
-      <img class="ml-2 h-auto max-w-[140px] hidden md:inline" 
-           src="{{ site.author.logo }}" 
+      <img class="h-auto max-w-[120px]"
+           src="{{ site.author.logo }}"
            alt="{{ site.author.name }}">
+    </div>
   
-      <!-- Mobile logo: absolutely positioned so its bottom aligns 
-           with the bottom of the "by Eve Death" container -->
-      <img class="absolute bottom-0 right-0 h-auto max-w-[120px] md:hidden"
-           src="{{ site.author.logo }}" 
+    <!-- Desktop byline and original logo (visible only on md+ screens) -->
+    <div class="hidden md:flex items-end mt-4 md:mt-0">
+      <span class="flex items-end">
+        <span class="mr-1">by</span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r
+                     from-rose-400 to-purple-800
+                     dark:from-pink-300 dark:to-violet-300
+                     font-bold whitespace-nowrap">
+          Eve Death
+        </span>
+      </span>
+      <img class="ml-2 h-auto max-w-[140px]"
+           src="{{ site.author.logo }}"
            alt="{{ site.author.name }}">
-    </span>
+    </div>
   </header>
