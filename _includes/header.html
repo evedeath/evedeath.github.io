@@ -15,7 +15,11 @@
       </span>
     </a>
     {%- endif -%}
+    <!-- Logo to the LEFT of byline -->
     <span class="relative flex items-end">
+      <img class="mr-2 inline h-auto max-w-[160px]"
+           src="{{ site.author.logo }}"
+           alt="{{ site.author.name }}">
       <span class="mr-1">is</span>
       <span class="bg-clip-text text-transparent bg-gradient-to-r
                    from-rose-400 to-purple-800
@@ -23,9 +27,6 @@
                    font-bold whitespace-nowrap">
         eve death
       </span>
-      <img class="mx-2 inline h-auto max-w-[160px]"
-           src="{{ site.author.logo }}"
-           alt="{{ site.author.name }}">
     </span>
   </div>
 
