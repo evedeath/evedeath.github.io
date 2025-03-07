@@ -23,7 +23,8 @@
                      font-bold whitespace-nowrap">
           Eve Death
         </span>
-        <img class="mx-2 inline h-28 w-28"
+        <!-- Larger square logo on desktop -->
+        <img class="mx-2 inline h-32 w-32"
              src="{{ site.author.logo }}"
              alt="{{ site.author.name }}">
       </span>
@@ -46,8 +47,8 @@
       </a>
       {%- endif -%}
       <!-- Absolutely positioned byline/logo for mobile -->
-      <div class="absolute left-0 right-0 top-[5rem] 
-                  flex items-end justify-between">
+      <div class="absolute left-0 right-0 top-[4rem]
+             flex items-end justify-between">
         <span class="flex items-end">
           <span class="mr-1">by</span>
           <span class="bg-clip-text text-transparent bg-gradient-to-r
@@ -57,6 +58,7 @@
             Eve Death
           </span>
         </span>
+        <!-- Slightly smaller logo on mobile -->
         <img class="h-auto max-w-[100px]"
              src="{{ site.author.logo }}"
              alt="{{ site.author.name }}">
