@@ -10,11 +10,13 @@
         </span>
     </a>
     {%- endif -%}
-    <span class="flex items-end self-start md:self-auto mt-4 md:mt-0">
-        <span class="mr-1">by</span>&nbsp;
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
-            Eve Death
-        </span>&nbsp;
+    <span class="flex flex-col-reverse md:flex-row items-start md:items-end self-start md:self-auto mt-4 md:mt-0 gap-1 md:gap-2">
         <img class="ml-2 inline h-auto max-w-[112px] md:max-w-[140px]" src="{{ site.author.logo }}" alt="{{ site.author.name }}">
+        <span class="flex items-start md:items-end">
+            <span class="mr-1">by</span>&nbsp;
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-purple-800 dark:from-pink-300 dark:to-violet-300 font-bold whitespace-nowrap">
+                Eve Death
+            </span>
+        </span>
     </span>
 </header>
